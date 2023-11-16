@@ -747,11 +747,14 @@ impl propagator::Constants {
                             p22.rem_euclid({
                                 #[cfg(feature = "std")]
                                 {
-                                    2.0 * core::f64::consts::PI
+                                    p22.rem_euclid(2.0 * core::f64::consts::PI)
                                 }
                                 #[cfg(not(feature = "std"))]
                                 {
-                                    &(2.0 * core::f64::consts::PI)
+                                    num_traits::Euclid::rem_euclid(
+                                        &p22,
+                                        &(2.0 * core::f64::consts::PI),
+                                    )
                                 }
                             })
                         } else {
