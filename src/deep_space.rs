@@ -751,7 +751,7 @@ impl propagator::Constants {
                                 }
                                 #[cfg(not(feature = "std"))]
                                 {
-                                    num_traits::Euclid::rem_euclid(
+                                    &num_traits::Euclid::rem_euclid(
                                         &p22,
                                         &(2.0 * core::f64::consts::PI),
                                     )
